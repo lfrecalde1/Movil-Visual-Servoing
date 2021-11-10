@@ -18,9 +18,11 @@ H_e =[inv(R),-inv(R)*h;...
 
   
 H3 = K*F*H_e*X;
-H3 = H3(1:2,:)/H3(3);
+for k = 1:size(H3,2)
+    aux_pixel(:,k) =  H3(1:2,k)/H3(3,k);
+end
 
 
-pixel = reshape(H3, numel(H3), 1);
+pixel = reshape(aux_pixel, numel(aux_pixel), 1);
 end
 

@@ -48,10 +48,10 @@ F = [f, 0, 0, 0;...
  
 
 %% Objeto en el espacio 
-P = [1, 1,1,1,1;...
+P = [1, 1.1, 1.1, 1, 1;...
      -0.05, 0.05,0.05,-0.05,-0.05;...   
      0.1, 0.1,0.05,0.05,0.1];
- 
+
 p(:,1) = cemera(K, F, P, h);
 
 %% definicion de los pixeles deseados del sistema
@@ -90,8 +90,8 @@ legend('boxoff')
 title('$\textrm{Evolucion del sistema}$','Interpreter','latex','FontSize',9);
 ylabel('$[m]$','Interpreter','latex','FontSize',9);
 xlabel('$[m]$','Interpreter','latex','FontSize',9);
-xlim([-1 1])
-ylim([-1 1])
+xlim([-1 1.5])
+ylim([-1 1.5])
 zlim([0 1])
 print -dpng Sistema
 print -depsc Sistema
