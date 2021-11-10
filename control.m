@@ -20,7 +20,8 @@ aux = [1,0,0;...
        0,0,1];
    
 J_total = J*Rotacion*aux*J_movil;
-
-control = pinv(J_total)*(e);
+K1 = 1*eye(10);
+K2 = 50*eye(10);
+control = pinv(J_total)*(K2*tanh(inv(K2)*K1*e));
 end
 
